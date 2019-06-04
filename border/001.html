@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+
+				background: #191919;
+				
+			}
+			.box{
+				height: 200px;
+			    width: 200px;
+				background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559670173751&di=552e2cffa39e57152de22a7bc3cc8282&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F2f082db014c1b7c04fd75f84e3b37db44750f88b1bb2e-cAdOYC_fw658') no-repeat center;
+			   background-size:cover;
+			    position: absolute;
+			    top:50%;
+			    left: 50%;
+			    transform: translate(-50%,-50%);
+			}
+			.box::before,.box::after{
+				content:'';
+				border: 2px solid chartreuse;
+				position: absolute;
+				top:0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				margin: -15px;
+				animation: borderClip 8s linear infinite;
+			}
+			.box::after{
+				animation-delay: -4s;
+			}
+			@keyframes borderClip{
+				0,100%{
+					clip: rect(8px,230px,2px,0px);
+				}
+				25%{
+					clip: rect(0px,2px,230px,0px);
+				}
+				50%{
+					clip: rect(228px,230px,230px,0px);
+				}
+				75%{
+					clip: rect(0px,230px,230px,228px);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>
